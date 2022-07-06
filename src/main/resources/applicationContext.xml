@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="rockMusicBean"
+          class="org.example.RockMusic">
+    </bean>
+
+    <bean id="classicalMusicBean"
+          class="org.example.ClassicalMusic">
+    </bean>
+
+    <bean id="jazzMusicBean"
+          class="org.example.JazzMusic">
+    </bean>
+
+   <bean id="musicPlayerList"
+         class="org.example.MusicPlayer">
+       <property name="musicList">
+           <list>
+               <ref bean="classicalMusicBean"/>
+               <ref bean="rockMusicBean"/>
+               <ref bean="jazzMusicBean"/>
+           </list>
+       </property>
+   </bean>
+</beans>
